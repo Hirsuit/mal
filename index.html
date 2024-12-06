@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if("ServiceWorker" in navigator){
+            navigator.serviceWorker.register("sw.js")
+        }
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="close-outline"></ion-icon>
+    </div>
+
+    <div class="barra-lateral">
+        <div>
+            <div class="nombre-pagina">
+                <ion-icon id="cloud" name="cloud-outline"></ion-icon>
+                <span>Apex</span>
+            </div>
+            <button class="boton">
+                <ion-icon name="add-outline"></ion-icon>
+                <span>Create new</span>
+            </button>
+        </div>
+
+        <nav class="navegacion">
+            <ul>
+                <li>
+                    <a id="inbox" href="#" class="menu-item">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                        <span>Inbox</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="starred" href="#" class="menu-item">
+                        <ion-icon name="star-outline"></ion-icon>
+                        <span>Starred</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="sent" href="#" class="menu-item">
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                        <span>Sent</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="drafts" href="#" class="menu-item">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        <span>Drafts</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="important" href="#" class="menu-item">
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <span>Important</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="spam" href="#" class="menu-item">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <span>Spam</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="trash" href="#" class="menu-item">
+                        <ion-icon name="trash-outline"></ion-icon>
+                        <span>Trash</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="linea"></div>
+
+            <div class="modo-oscuro">
+                <div class="info">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <span>Drak Mode</span>
+                </div>
+                <div class="switch">
+                    <div class="base">
+                        <div class="circulo">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="usuario">
+                <img src="img-user.jpeg" alt="">
+                <div class="info-usuario">
+                    <div class="nombre-email">
+                        <span class="nombre">Jhampier</span>
+                        <span class="email">jhampier@gmail.com</span>
+                    </div>
+                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Añadir el botón "+" al final del cuerpo de la página -->
+        <div class="boton-plus">
+            <ion-icon name="add-outline"></ion-icon>
+        </div>
+        <!-- Cuadro de diálogo principal -->
+        <div id="dialogo" class="dialogo">
+            <div class="dialogo-contenido">
+                <h2>¿Cómo quieres agregar tu clase?</h2>
+                <div class="opciones">
+                    <button class="opcion" id="codigo">Por código numérico</button>
+                    <button class="opcion" id="qr">Por código QR</button>
+                </div>
+                <button id="cerrar" class="cerrar">Cerrar</button>
+            </div>
+        </div>
+
+        <!-- Cuadro de diálogo para ingresar el código -->
+        <div id="dialogo" class="dialogo">
+            <div class="dialogo-contenido">
+                <h2>Ingresa tu código de 6 dígitos</h2>
+                <input type="text" id="codigo-input" class="codigo-input" maxlength="6" placeholder="Código de 6 dígitos">
+                <button id="confirmar-codigo" class="confirmar-btn">Confirmar</button>
+                <button id="cerrar-codigo-dialogo" class="cerrar-btn">Cerrar</button>
+            </div>
+        </div>
+
+
+    <main>
+        <!-- El contenido cambiará dinámicamente aquí -->
+        <h1>Welcome</h1>
+        <p>Select an option from the sidebar to change the content.</p>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+    <script src="cuadrodialogo.js"></script>
+</body>
+</html>
